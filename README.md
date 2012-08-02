@@ -11,11 +11,13 @@ Ancient-Chinese-Pinyin-transform-Tool
 保存目标文件为dicFile  
 
 
-####match()函数**
+####match()函数
 传入三个参数， dicFile, sourceFile, saveFile  
 dicFile为利用combine函数所生成的字典文件  
 sourceFile内容为要转换为古汉语拼音的文字  
 saveFile用于保存结果
+
+###示例
 
 例如：  
 
