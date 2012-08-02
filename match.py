@@ -1,5 +1,6 @@
 #encoding=utf-8
 #author: lvyaojia
+#date: 2012-03-24
 
 def combine():
 	dicFile = open('dicFile','a')
@@ -14,17 +15,17 @@ def combine():
 	dicFile.close()
 
 
-def match(f = 'dicFile',openFrom = "source",saveTo = "save"):
-	demoFile = open(openFrom).read().decode('utf-8')
-	saveFile = open(saveTo,'a')
-	Dic = open(f).readlines()
-	dic = {}
-	for line in Dic:
+def match(dicFile='dicFile', sourceFile="source", saveFile="result"):
+	sourceFile = open(sourceFile).read().decode('utf-8')
+	saveFile = open(saveFile,'a')
+	dictoryRaw = open(dicFile).readlines()
+	dictory = {}
+	for line in dictoryRaw:
 		temp = line.split('*')
 		words,spelling = temp[0].decode('utf-8'), temp[1].rstrip()
-		dic.update({}.fromkeys(words, spelling))
-	for character in demoFile:
-		tem =  dic.get(character)
+		dictory.update({}.fromkeys(words, spelling))
+	for character in sourceFile:
+		tem =  dictory.get(character)
 		if(tem!=None):
 			saveFile.write(tem+" ")
 			print character.encode('utf-8')," ",tem, 
